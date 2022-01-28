@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xNT-lA-6gq">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--SearchView-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="SearchViewVC" customModule="searchView" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="IDI-YT-Fd9">
+                                <rect key="frame" x="0.0" y="44" width="414" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="e8M-lJ-sZH"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dY5-40-WcJ">
+                                <rect key="frame" x="16" y="120" width="382" height="693"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="HxJ-OW-YKz">
+                                    <size key="itemSize" width="150" height="150"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="mainCell" id="qaO-7Y-uxq" customClass="MainCell" customModule="searchView" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="3hk-Tt-5D3">
+                                            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Iau-Qq-RgF">
+                                                    <rect key="frame" x="16" y="16" width="118" height="80"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="100" id="Oi3-XG-icR"/>
+                                                        <constraint firstAttribute="height" constant="80" id="hOx-OW-dmh"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o33-vG-lbT">
+                                                    <rect key="frame" x="16" y="112" width="118" height="28"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="o33-vG-lbT" secondAttribute="trailing" constant="16" id="6jD-UF-TsH"/>
+                                                <constraint firstAttribute="trailing" secondItem="Iau-Qq-RgF" secondAttribute="trailing" constant="16" id="HAj-BE-fz9"/>
+                                                <constraint firstItem="Iau-Qq-RgF" firstAttribute="leading" secondItem="3hk-Tt-5D3" secondAttribute="leading" constant="16" id="Mf5-82-JhH"/>
+                                                <constraint firstItem="Iau-Qq-RgF" firstAttribute="top" secondItem="3hk-Tt-5D3" secondAttribute="top" constant="16" id="iIy-Jx-UfL"/>
+                                                <constraint firstItem="o33-vG-lbT" firstAttribute="top" secondItem="Iau-Qq-RgF" secondAttribute="bottom" constant="16" id="ivg-e3-YMD"/>
+                                                <constraint firstItem="o33-vG-lbT" firstAttribute="leading" secondItem="3hk-Tt-5D3" secondAttribute="leading" constant="16" id="pxk-dq-OVO"/>
+                                                <constraint firstAttribute="bottom" secondItem="o33-vG-lbT" secondAttribute="bottom" constant="10" id="tuz-1n-zXV"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="img" destination="Iau-Qq-RgF" id="kiO-Um-Zki"/>
+                                            <outlet property="title" destination="o33-vG-lbT" id="rWx-kN-vfr"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dY5-40-WcJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="3EW-2d-vlI"/>
+                            <constraint firstItem="dY5-40-WcJ" firstAttribute="top" secondItem="IDI-YT-Fd9" secondAttribute="bottom" constant="16" id="G6E-Ib-3Ik"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dY5-40-WcJ" secondAttribute="bottom" id="UFv-91-9Ov"/>
+                            <constraint firstItem="IDI-YT-Fd9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="cvx-cq-bLZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dY5-40-WcJ" secondAttribute="trailing" constant="16" id="fsk-wE-6mN"/>
+                            <constraint firstItem="IDI-YT-Fd9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="g4Q-Xa-pVQ"/>
+                            <constraint firstAttribute="trailing" secondItem="IDI-YT-Fd9" secondAttribute="trailing" id="x0z-bW-1m4"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="SearchView" image="magnifyingglass.circle" catalog="system" id="NDd-Rj-m25"/>
+                    <connections>
+                        <outlet property="searchBar" destination="IDI-YT-Fd9" id="Zvt-kb-p8S"/>
+                        <outlet property="searchCollectionView" destination="dY5-40-WcJ" id="ugf-KK-1rH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="884.05797101449286" y="117.85714285714285"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="xmn-Eg-55H">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="xNT-lA-6gq" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BL2-eH-rS3">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="lYe-7h-zyD"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zpW-sK-zEY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-26.086956521739133" y="117.85714285714285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="magnifyingglass.circle" catalog="system" width="128" height="121"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
