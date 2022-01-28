@@ -70,9 +70,3 @@ extension SearchViewVC: UISearchBarDelegate{
         }
     }
 }
-
-extension String {
-    func containsIgnoreCase(_ string: String) -> Bool {
-        return self.lowercased().contains(string.lowercased())
-    }
-}
