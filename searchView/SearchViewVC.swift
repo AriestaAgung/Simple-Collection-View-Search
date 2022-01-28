@@ -64,9 +64,18 @@ extension SearchViewVC: UISearchBarDelegate{
         if searchText != "" {
             searchData = data.filter{ $0.name.localizedCaseInsensitiveContains(searchText) }
             searchCollectionView.reloadData()
+            if searchData.count < 1 {
+                searchCollectionView.isHidden = true
+            } else {
+                searchCollectionView.isHidden = false
+            }
         } else {
             searchData.removeAll()
             searchCollectionView.reloadData()
         }
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchData.removeAll()
     }
 }
